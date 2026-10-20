@@ -112,6 +112,7 @@ class ScanFileTests(unittest.TestCase):
 
     def write(self, name, data):
         path = os.path.join(self.tmp, name)
+        os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path, "wb") as fh:
             fh.write(data)
         return path
