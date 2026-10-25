@@ -1,5 +1,7 @@
 import os
+import shutil
 import sys
+import tempfile
 import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -104,9 +106,6 @@ class ScanTextTests(unittest.TestCase):
 
 class ScanFileTests(unittest.TestCase):
     def setUp(self):
-        import shutil
-        import tempfile
-        self.shutil = shutil
         self.tmp = tempfile.mkdtemp()
         self.addCleanup(shutil.rmtree, self.tmp)
 
