@@ -1,3 +1,5 @@
+# Unit tests for the glyph-audit scanning engine.
+
 import os
 import shutil
 import sys
@@ -70,8 +72,7 @@ class ScanTextTests(unittest.TestCase):
         self.assertEqual(engine.scan_text("\u043f\u0440\u0438\u0432\u0435\u0442"), [])
 
     def test_standalone_cyrillic_letter_is_not_flagged(self):
-        # A lone Cyrillic letter is its own token, so it is not a latin word
-        # carrying foreign letters and must stay quiet.
+        # A lone Cyrillic letter is its own token, so it is not a latin word carrying foreign letters and must stay quiet.
         self.assertEqual(engine.scan_text("yes \u0430 no"), [])
 
     def test_category_filter_limits_output(self):
