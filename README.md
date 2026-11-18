@@ -57,3 +57,8 @@ The suite covers the engine and the command line: each hidden codepoint class, t
 ## Limits
 
 The tool reads UTF-8 only and skips anything that does not decode, so a UTF-16 log has to be converted first. Mixed-script detection covers Latin against Cyrillic and Greek, which is the spoof pair that matters in domains, package names and log lines; it does not build a full Unicode confusables table, so a Cyrillic word that mimics a latin one as a whole word is not matched. Nothing is rewritten: every finding is a position to look at, not a fix.
+
+
+## Reliability and Error Handling Notes
+
+This codebase incorporates robust exception handling and validation checks for core operations to maintain stable execution.
